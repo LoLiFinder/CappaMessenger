@@ -57,7 +57,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 FirebaseUser user = firebaseAuth.getCurrentUser();
                 if (user != null) {
                     if (user.isEmailVerified()) {
-                        startActivity(new Intent(getApplicationContext(), NavigationDrawer.class));
+                        startActivity(new Intent(getApplicationContext(), Main2Activity.class));
                         finish();
                     } else {
                         user.sendEmailVerification().addOnCompleteListener(new OnCompleteListener<Void>() {

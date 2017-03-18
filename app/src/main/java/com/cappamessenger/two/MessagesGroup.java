@@ -1,34 +1,51 @@
 package com.cappamessenger.two;
 
+import com.google.firebase.database.Exclude;
+
 /**
  * Created by Dkflbc on 15.03.17.
  */
 
 public class MessagesGroup {
-    private String name;
-    private String messagesGroup;
+    private String message;
+    private String sender;
+    private String recipient;
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getMessagesGroup() {
-        return messagesGroup;
-    }
-
-    public void setMessagesGroup(String messagesGroup) {
-        this.messagesGroup = messagesGroup;
-    }
+    private int mRecipientOrSenderStatus;
 
     public MessagesGroup() {
     }
 
-    public MessagesGroup(String name, String messagesGroup) {
-        this.name = name;
-        this.messagesGroup = messagesGroup;
+    public MessagesGroup(String message, String sender, String recipient) {
+        this.message = message;
+        this.recipient = recipient;
+        this.sender = sender;
+    }
+
+
+    public void setRecipientOrSenderStatus(int recipientOrSenderStatus) {
+        this.mRecipientOrSenderStatus = recipientOrSenderStatus;
+    }
+
+
+    public String getMessage() {
+        return message;
+    }
+
+    public String getRecipient(){
+        return recipient;
+    }
+
+    public String getSender(){
+        return sender;
+    }
+
+    @Exclude
+    public int getRecipientOrSenderStatus() {
+        return mRecipientOrSenderStatus;
+    }
+
+    public void setSender(String sender) {
+        this.sender = sender;
     }
 }

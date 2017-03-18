@@ -1,0 +1,74 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/fragmentcoint"
+    tools:context="com.cappamessenger.two.NavigationDrawer">
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_view_chat"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFB74D"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/progress_for_chat"
+        android:layout_toEndOf="@+id/progress_for_chat" >
+
+    </android.support.v7.widget.RecyclerView>
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_gravity="bottom"
+        android:background="#FF9800"
+        android:layout_above="@+id/senderContainer"/>
+
+    <RelativeLayout
+        android:id="@+id/senderContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFB74D"
+        android:paddingBottom="4dp"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:paddingTop="8dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <Button
+            android:id="@+id/btn_send_message"
+            android:layout_marginRight="10dp"
+            android:textColor="#000000"
+            android:layout_width="72dp"
+            android:layout_height="40dp"
+
+            android:text="Send"
+            android:background="#FF6F00"
+            android:layout_alignParentRight="true"
+            />
+
+        <EditText
+            android:id="@+id/edit_text_message"
+            android:layout_marginLeft="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#4E342E"
+            android:textSize="14sp"
+            android:hint="Type your message"
+            android:gravity="start"
+            android:layout_toLeftOf="@+id/btn_send_message"
+            android:text="" />
+    </RelativeLayout>
+
+    <ProgressBar
+        android:id="@+id/progress_for_chat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:visibility="gone"/>
+
+</RelativeLayout>
